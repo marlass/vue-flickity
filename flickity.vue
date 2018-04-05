@@ -18,111 +18,111 @@ export default {
         },
     },
 
-    mounted () {
+    mounted: function () {
       this.init();
     },
 
-    beforeDestroy () {
+    beforeDestroy: function () {
         this.flickity.destroy();
         this.flickity = null;
     },
 
     methods: {
-        init() {
+        init: function() {
             this.flickity = new Flickity(this.$el, this.options);
             this.$emit('init', this.flickity);
         },
 
-        next (isWrapped, isInstant) {
+        next: function (isWrapped, isInstant) {
             this.flickity.next(isWrapped, isInstant);
         },
 
-        previous (isWrapped, isInstant) {
+        previous: function (isWrapped, isInstant) {
             this.flickity.previous(isWrapped, isInstant);
         },
 
-        select (index, isWrapped, isInstant) {
+        select: function (index, isWrapped, isInstant) {
             this.flickity.select(index, isWrapped, isInstant);
         },
 
-        selectedIndex () {
+        selectedIndex: function () {
             return this.flickity.selectedIndex
         },
 
-        selectCell (value, isWrapped, isInstant) {
+        selectCell: function (value, isWrapped, isInstant) {
             this.flickity.selectCell( value, isWrapped, isInstant );
         },
 
-        resize () {
+        resize: function () {
             this.flickity.resize();
         },
 
-        reposition () {
+        reposition: function () {
             this.flickity.reposition();
         },
 
-        prepend (elements) {
+        prepend: function (elements) {
             this.flickity.prepend(elements);
         },
 
-        append (elements) {
+        append: function (elements) {
             this.flickity.append(elements);
         },
 
-        insert (elements, index) {
+        insert: function (elements, index) {
             this.flickity.insert(elements, index);
         },
 
-        remove (elements) {
+        remove: function (elements) {
             this.flickity.remove(elements);
         },
 
-        playPlayer () {
+        playPlayer: function () {
             this.flickity.playPlayer();
         },
 
-        stopPlayer () {
+        stopPlayer: function () {
             this.flickity.stopPlayer();
         },
 
-        pausePlayer () {
+        pausePlayer: function () {
             this.flickity.pausePlayer();
         },
 
-        unpausePlayer () {
+        unpausePlayer: function () {
             this.flickity.unpausePlayer();
         },
 
-        rerender () {
+        rerender: function () {
             this.flickity.destroy();
             this.init();
         },
 
-        destroy () {
+        destroy: function () {
             this.flickity.destroy();
         },
 
-        reloadCells () {
+        reloadCells: function () {
             this.flickity.reloadCells();
         },
 
-        getCellElements () {
+        getCellElements: function () {
             this.flickity.getCellElements();
         },
 
-        data () {
+        data: function () {
             return Flickity.data(this.$el);
         },
 
-        on (eventName, listener) {
+        on: function (eventName, listener) {
             this.flickity.on(eventName, listener);
         },
 
-        off (eventName, listener) {
+        off: function (eventName, listener) {
             this.flickity.off(eventName, listener);
         },
 
-        once (eventName, listener) {
+        once: function (eventName, listener) {
             this.flickity.once(eventName, listener);
         }
     },
